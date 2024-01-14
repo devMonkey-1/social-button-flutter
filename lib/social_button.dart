@@ -1,6 +1,7 @@
 library social_button;
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum ButtonType { google, facebook, twitter, apple }
 
@@ -23,12 +24,22 @@ class _SocialButtonState extends State<SocialButton> {
       child: Row(
         children: [
           if (widget.type == ButtonType.google)
-            Image.asset('assets/g-logo.png'),
-          if (widget.type == ButtonType.facebook) const Icon(Icons.facebook),
+            const Icon(FontAwesomeIcons.google),
+          if (widget.type == ButtonType.facebook)
+            const Icon(FontAwesomeIcons.facebook),
           if (widget.type == ButtonType.twitter)
-            Image.asset('assets/t-logo.png'),
-          if (widget.type == ButtonType.apple) const Icon(Icons.apple),
+            const Icon(FontAwesomeIcons.xTwitter),
+          if (widget.type == ButtonType.apple)
+            const Icon(FontAwesomeIcons.apple),
+          if(widget.type == ButtonType.google)
           const Text('Login with Google'),
+          if(widget.type == ButtonType.facebook)
+          const Text('Login with Facebook'),
+          if(widget.type == ButtonType.twitter)
+          const Text('Login with Twitter'),
+          if(widget.type == ButtonType.apple)
+          const Text('Login with Apple'),
+          
         ],
       ),
     );
