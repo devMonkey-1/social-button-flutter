@@ -9,6 +9,7 @@ enum ButtonSize { mini, large }
 
 enum ButtonShape { custom, rectangular, pill }
 
+
 class SocialButton extends StatelessWidget {
   final ButtonType type;
   final ButtonSize size;
@@ -24,10 +25,17 @@ class SocialButton extends StatelessWidget {
   final Color? color;
   final Color? textColor;
   final Color? borderColor;
+  final double? height;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
+
 
   const SocialButton(
       {super.key,
       required this.type,
+      this.mainAxisAlignment = MainAxisAlignment.center,
+      this.crossAxisAlignment = CrossAxisAlignment.center,
+      this.height = 48,
       this.iconWidget,
       this.size = ButtonSize.large,
       this.shape = ButtonShape.rectangular,
@@ -50,6 +58,7 @@ class SocialButton extends StatelessWidget {
             brightness: isDarkMode == true ? Brightness.dark : Brightness.light,
           ),
       child: MaterialButton(
+        height: height,
         padding: const EdgeInsets.all(2),
         onPressed: () {
           onPressed();
@@ -81,6 +90,8 @@ class SocialButton extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisAlignment: mainAxisAlignment!,
+          crossAxisAlignment: crossAxisAlignment!,
           children: [
             Padding(
               padding: const EdgeInsets.all(10),
