@@ -1,6 +1,6 @@
 # social_button_flutter
 
-[![Flutter Community: social_button_flutter](https://github.com/devMonkey-1/social-button-flutter)
+Flutter: social_button_flutter
 
 The *free*
 as set of Social Login - based on brand guidelines.

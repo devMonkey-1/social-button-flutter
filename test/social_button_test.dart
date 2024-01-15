@@ -3,8 +3,9 @@ import 'package:social_button_flutter/social_button.dart';
 
 void main() {
   test('adds one to input values', () {
-    const socialButton = SocialButton(
+    SocialButton socialButton = SocialButton(
       type: ButtonType.google,
+      onPressed: () {},
     );
     expect(socialButton.type, ButtonType.google);
   });
